@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Shopping - Product Recommendation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafa;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    table {
+      margin: 30px auto;
+      width: 80%;
+      border-collapse: collapse;
+      background-color: #fff;
+      display: none;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #e3f2fd;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔍 Smart Shopping: Search Product Recommendations</h1>
+
+  <input type="text" id="customerInput" placeholder="Enter Customer ID (e.g. C1000)" />
+  <button onclick="showRecommendations()">Search</button>
+
+  <div id="message"></div>
+
+  <table id="recommendationTable">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Category</th>
+        <th>Subcategory</th>
+        <th>Brand</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>P101</td>
+        <td>Electronics</td>
+        <td>Headphones</td>
+        <td>boAt</td>
+        <td>4.6</td>
+      </tr>
+      <tr>
+        <td>P205</td>
+        <td>Home & Kitchen</td>
+        <td>Air Fryer</td>
+        <td>Prestige</td>
+        <td>4.4</td>
+      </tr>
+      <tr>
+        <td>P312</td>
+        <td>Fashion</td>
+        <td>Men’s T-Shirts</td>
+        <td>Roadster</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>P498</td>
+        <td>Books</td>
+        <td>Self Help</td>
+        <td>Penguin</td>
+        <td>4.8</td>
+      </tr>
+      <tr>
+        <td>P610</td>
+        <td>Beauty</td>
+        <td>Skincare</td>
+        <td>Neutrogena</td>
+        <td>4.3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function showRecommendations() {
+      var input = document.getElementById("customerInput").value.trim().toUpperCase();
+      var table = document.getElementById("recommendationTable");
+      var message = document.getElementById("message");
+
+      if (input === "C1000") {
+        table.style.display = "table";
+        message.textContent = "Showing recommendations for customer ID: C1000";
+        message.style.color = "#2ecc71";
+      } else {
+        table.style.display = "none";
+        message.textContent = "No recommendations found for customer ID: " + input;
+        message.style.color = "#e74c3c";
+      }
+    }
+  </script>
+
+</body>
+</html>
